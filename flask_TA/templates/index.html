@@ -1,1 +1,19 @@
-<h1>Home page</h1>
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<span>Request Method - {{request_method}}</span>
+<main>
+    <form id="searchForm" method="post" action="/">
+        <label>
+            Enter Your Statement
+            <input type="text" id="statement" name="statement" />
+        </label>
+        <button type="submit">Press</button>
+    </form>
+    <p>Result: {{label}}</p>
+    <p>Number: {{number}}</p>
+</main>
+
+{% endblock content %}

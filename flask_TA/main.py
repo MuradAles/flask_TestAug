@@ -1,11 +1,16 @@
-from flask import Blueprint, render_template
-
+from flask_TA.functions import python_functions
+from flask import Blueprint, render_template, request, url_for
 main = Blueprint('main', __name__)
 
 
-@main.route('/')
+@main.route('/', methods=["POST", "GET"])
 def index():
-    return render_template('index.html')
+    request_method = request.method
+    if request.method == 'POST':
+        value = request.form['statement']
+        num = python_functions.displayText(4)
+        return render_template('index.html', label=value, request_method=request_method, number=num)
+    return render_template('index.html', request_method=request_method)
 
 
 @main.route('/profile')
