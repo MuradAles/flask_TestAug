@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Dynamic{% endblock %}
+{% block body %}
+    <h2>Processed input:</h2>
+    <h3>{{ processedInput }}</h3>
+
+    <form action = "http://localhost:5000/input" method = "post">
+
+    <p>Enter New Input:</p>
+    <p><input type = "text" name = "text" /></p>
+    <p><input type = "submit" value = "submit" /></p>
+{% endblock %}
