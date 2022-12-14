@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<span>Request Method - {{request_method}}</span>
+<main>
+    <form id="ValueForm" method="post" action="/">
+        <label>
+            Enter Your Statement
+            <input type="text" id="statement" name="statement" />
+        </label>
+        <button type="submit">Press</button>
+    </form>
+    <p>Result: {{label}}</p>
+    {% if output %}
+    <ul>
+        <form id="CheckForm" method="post" action="/">
+            {% for i in output %}
+            <li>
+                <input type="checkbox" id="output_list" name="output" value="{{i}}">
+                <label for="output_list">{{i}}</label>
+            </li>
+            {% endfor %}
+            <button type="submit">Check Box</button>
+        </form>
+    </ul>
+    {% endif %}
+</main>
+
+{% endblock content %}
