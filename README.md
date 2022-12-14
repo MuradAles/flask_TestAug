@@ -1,15 +1,19 @@
 # flask_TestAug
 
-first you need to download python3 and flask
+activate your environment for testaug
+
+first, you need to download the library flask
 
 pip3 install Flask
 
 commands:
-to start web use flask start in Final_Project folder
+to start the web application, you need to specify the flask folder.
+Our folder will be testaug (command at the bottom):
+    export FLASK_APP=testaug
+    if export doesn't work in your console use this command:
+        set FLASK_APP=testaug
+        
+then to run a web application use command at the bottom:
+    flask run
 
-export FLASK_APP=testaug
-
-than to run use 
-
-flask run
-
+To stop the web application press CTRL+C
