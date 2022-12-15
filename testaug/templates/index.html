@@ -2,15 +2,34 @@
 
 {% block content %}
 
-<span>Request Method - {{request_method}}</span>
+<!--<span>Request Method - {{request_method}}</span> -->
 <main>
+    
+    <script>
+        function loadingAnim(){
+
+            var x=document.getElementById("loading_animation");
+            if (x.style.display == 'none'){
+                x.style.display = 'block';
+                x.classList.remove("fade_out")
+                x.classList.add("fade_in")
+            }
+        }
+    </script>
+<!--    <button onclick="loadingAnim()">DEBUG-SHOW ANIM</button> -->
+    <div class="Main">
+    <div class="Dialogue">
+    <div class="Input">
     <form id="ValueForm" method="post" action="/">
         <label>
             Enter Your Statement
             <input type="text" id="statement" name="statement" />
         </label>
-        <button type="submit">Press</button>
+        <br>
+        <button type="submit" onclick="loadingAnim()">Press</button>
     </form>
+    </div>
+    <div class="Output">
     <p>Result: {{label}}</p>
     {% if output %}
     <ul>
@@ -21,10 +40,19 @@
                 <label for="output_list">{{i}}</label>
             </li>
             {% endfor %}
-            <button type="submit">Check Box</button>
+            <button type="submit" onclick="loadingAnim()">Check Box</button>
         </form>
     </ul>
     {% endif %}
+    </div>
+    </div>
+    <div id="loading_animation" style="display:none;"><div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div><div>
+    </div>
+    
+    
+
 </main>
+
+    
 
 {% endblock content %}
