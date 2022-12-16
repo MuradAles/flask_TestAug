@@ -10,15 +10,27 @@ header{
 
 body {
     font-family:"Segoe UI";
-    background-color: #c29591;
+    background-image: linear-gradient(to bottom,lightsalmon,linen,floralwhite,floralwhite,floralwhite,floralwhite,floralwhite);
+    background-size:cover;
+    background-repeat:no-repeat;
     animation: fade_in;
     animation-duration: 1s;
+}
+
+p{
+    margin-top:0em;
+    margin-bottom:0em;
+}
+
+li{
+    list-style-type:none;
 }
 
 div.Main{
     margin:0 auto;
     height:80vh;
     width:95vw;
+    padding:5px;
     background-color:white;
     border-style:solid;
     border-radius:4px;
@@ -28,7 +40,8 @@ div.Main{
 div.Dialogue{
     display:flex;
     flex-direction:row;
-    padding:5px;
+    column-gap:5px;
+    height:100%;
 /*    border-style:solid;
     border-radius:4px;
     border-color:darkslategrey;
@@ -36,9 +49,27 @@ div.Dialogue{
 }
 div.Input{
     width:50%;
+    height:60%;
+    background-color:#F8F8F8;
+    border-style:solid;
+    border-radius:10px;
+    border-color:lightslategrey;
+    border-width:1px;
+}
+div.Input * {
+    padding: 5px;
 }
 div.Output{
     width:50%;
+    height:60%;
+    background-color:#F8F8F8;
+    border-style:solid;
+    border-radius:10px;
+    border-color:lightslategrey;
+    border-width:1px;
+}
+div.Output * {
+    padding: 5px;
 }
 
 .fade_in{

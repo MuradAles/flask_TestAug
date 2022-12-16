@@ -7,7 +7,6 @@
     
     <script>
         function loadingAnim(){
-
             var x=document.getElementById("loading_animation");
             if (x.style.display == 'none'){
                 x.style.display = 'block';
@@ -15,16 +14,17 @@
                 x.classList.add("fade_in")
             }
         }
+        function checkboxClick(element){
+            element.checked = !element.checked;
+        }
     </script>
 <!--    <button onclick="loadingAnim()">DEBUG-SHOW ANIM</button> -->
     <div class="Main">
     <div class="Dialogue">
     <div class="Input">
+    <p>Enter Your Statement</p>
     <form id="ValueForm" method="post" action="/">
-        <label>
-            Enter Your Statement
-            <input type="text" id="statement" name="statement" />
-        </label>
+        <input type="text" id="statement" name="statement" />
         <br>
         <button type="submit" onclick="loadingAnim()">Press</button>
     </form>
@@ -34,10 +34,10 @@
     {% if output %}
     <ul>
         <form id="CheckForm" method="post" action="/">
-            {% for i in output %}
+              {% for i in output %}
             <li>
-                <input type="checkbox" id="output_list" name="output" value="{{i}}">
-                <label for="output_list">{{i}}</label>
+                <input class="outputList" type="checkbox" id="{{i}}" name="output" value="{{i}}">
+                <label class="outputList" for="{{i}}">{{i}}</label>
             </li>
             {% endfor %}
             <button type="submit" onclick="loadingAnim()">Check Box</button>
