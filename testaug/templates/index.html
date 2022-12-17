@@ -2,9 +2,13 @@
 
 {% block content %}
 
+       
+
 <!--<span>Request Method - {{request_method}}</span> -->
 <main>
-    
+    {% if user_like %}
+    <div id="CheckBoxConfirmation">Responses submitted!</div>
+    {% endif %}
     <script>
         function loadingAnim(){
             var x=document.getElementById("loading_animation");
@@ -18,6 +22,8 @@
             element.checked = !element.checked;
         }
     </script>
+
+
 <!--    <button onclick="loadingAnim()">DEBUG-SHOW ANIM</button> -->
     <div class="Main">
     <div class="Dialogue">
@@ -32,23 +38,46 @@
     <div class="Output">
     <p>Result: {{label}}</p>
     {% if output %}
-    <ul>
-        <form id="CheckForm" method="post" action="/">
-              {% for i in output %}
+    <p>Please select all responses that are examples of harmful speech.</p>
+    <form id="CheckForm" method="post" action="/">     
+        <ul id = "CheckForm">
+            <div class="form">
+            {% for i in output %}
             <li>
                 <input class="outputList" type="checkbox" id="{{i}}" name="output" value="{{i}}">
                 <label class="outputList" for="{{i}}">{{i}}</label>
             </li>
             {% endfor %}
-            <button type="submit" onclick="loadingAnim()">Check Box</button>
-        </form>
-    </ul>
+            </div>
+            <br>
+            <button type="submit" onclick="loadingAnim()">Check Box</button>    
+        </ul>
+    </form>
+
     {% endif %}
     </div>
+
+    
+
     </div>
+
     <div id="loading_animation" style="display:none;"><div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div><div>
+
     </div>
     
+    <script>
+        var x = document.getElementById("CheckBoxConfirmation");
+        if (x !== null){
+            
+            setTimeout(function(){
+                x.classList.remove("fade_in");
+                x['style']['animation-duration'] = '.5s';
+                x.classList.add("fade_out");
+            }, 3000);
+
+
+        }
+    </script>
     
 
 </main>

@@ -6,6 +6,8 @@ header{
                 -1px 1px black,
                 -1px -1px black;
     letter-spacing:1px;
+    margin-bottom:5vh;
+    font-size:20px;
 }
 
 body {
@@ -13,8 +15,16 @@ body {
     background-image: linear-gradient(to bottom,lightsalmon,linen,floralwhite,floralwhite,floralwhite,floralwhite,floralwhite);
     background-size:cover;
     background-repeat:no-repeat;
+
     animation: fade_in;
     animation-duration: 1s;
+
+    height:100vh;
+    overflow-y:scroll;
+}
+
+main{
+
 }
 
 p{
@@ -26,22 +36,45 @@ li{
     list-style-type:none;
 }
 
+form#CheckForm{
+    margin:0;
+
+}
+
+div#CheckBoxConfirmation{
+    position:absolute;
+    top:4vh;
+    right:3vw;
+    background-color:lightskyblue;
+    border-style:solid;
+    border-radiux:5px;
+    padding:5px;
+    border-width:1px;
+    border-color:black;
+    animation-fill-mode:forwards;
+/*    animation:fade_out;
+    animation-duration:0.5s;
+    animation-delay: 3s;*/
+
+}
+
 div.Main{
     margin:0 auto;
-    height:80vh;
+    block-size:fit-content;
     width:95vw;
+    height:60vh;
     padding:5px;
-    background-color:white;
+/*    background-color:floralwhite;
     border-style:solid;
     border-radius:4px;
     border-color:darkslategrey;
-    border-width:1px;
+    border-width:1px;*/
 }
 div.Dialogue{
     display:flex;
     flex-direction:row;
     column-gap:5px;
-    height:100%;
+    max-height:100%;
 /*    border-style:solid;
     border-radius:4px;
     border-color:darkslategrey;
@@ -50,10 +83,10 @@ div.Dialogue{
 div.Input{
     width:50%;
     height:60%;
-    background-color:#F8F8F8;
+    background-color:floralwhite;
     border-style:solid;
     border-radius:10px;
-    border-color:lightslategrey;
+    border-color:rgba(40,70,70,.3);
     border-width:1px;
 }
 div.Input * {
@@ -62,14 +95,25 @@ div.Input * {
 div.Output{
     width:50%;
     height:60%;
-    background-color:#F8F8F8;
+    background-color:floralwhite;
     border-style:solid;
     border-radius:10px;
-    border-color:lightslategrey;
+    border-color:rgba(40,70,70,.3);
     border-width:1px;
 }
 div.Output * {
     padding: 5px;
+}
+
+div.form{
+    display:flex;
+    flex-direction:column;
+    max-height:300px;
+    overflow-y:scroll;
+    border-style:solid;
+    border-radius:4px;
+    border-color:darkslategrey;
+    border-width:1px;
 }
 
 .fade_in{
