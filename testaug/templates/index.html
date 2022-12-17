@@ -10,6 +10,9 @@
     <div id="CheckBoxConfirmation">Responses submitted!</div>
     {% endif %}
     <script>
+
+        
+
         function loadingAnim(){
             var x=document.getElementById("loading_animation");
             if (x.style.display == 'none'){
@@ -28,17 +31,21 @@
     <div class="Main">
         <div class="Dialogue">
             <div class="Input">
-                <p>Enter Your Statement</p>
+                <h2>Input:</h2>
+                <br>
+                <label>Enter Your Statement:</label>
                 <form id="ValueForm" method="post" action="/">
-                    <input type="text" id="statement" name="statement" />
+                    <textarea type="text" id="statement" name="statement" placeholder="Give an example of hate speech towards...">{{label}}</textarea>
                     <br>
-                    <button type="submit" onclick="loadingAnim()">Press</button>
+                    <button type="submit" onclick="loadingAnim()">Submit Request</button>
                 </form>
             </div>
+
             <div class="Output">
-                <p>Result: {{label}}</p>
+                <h2>Output:</h2>
                 {% if output %}
-                <p>Please select all responses that are examples of harmful speech.</p>
+                <br>
+                <label>Please select all responses that are examples of harmful speech.</label>
                 <form id="CheckForm" method="post" action="/">     
                     <ul id = "CheckForm">
                         <div class="form">
@@ -50,7 +57,7 @@
                             {% endfor %}
                         </div>
                         <br>
-                        <button type="submit" onclick="loadingAnim()">Check Box</button>    
+                        <button type="submit" onclick="loadingAnim()">Submit Reponses</button>    
                     </ul>
                 </form>
 
