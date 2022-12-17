@@ -2,7 +2,7 @@
 
 {% block content %}
 
-       
+
 
 <!--<span>Request Method - {{request_method}}</span> -->
 <main>
@@ -24,64 +24,78 @@
     </script>
 
 
-<!--    <button onclick="loadingAnim()">DEBUG-SHOW ANIM</button> -->
+    <!--    <button onclick="loadingAnim()">DEBUG-SHOW ANIM</button> -->
     <div class="Main">
-    <div class="Dialogue">
-    <div class="Input">
-    <p>Enter Your Statement</p>
-    <form id="ValueForm" method="post" action="/">
-        <input type="text" id="statement" name="statement" />
-        <br>
-        <button type="submit" onclick="loadingAnim()">Press</button>
-    </form>
-    </div>
-    <div class="Output">
-    <p>Result: {{label}}</p>
-    {% if output %}
-    <p>Please select all responses that are examples of harmful speech.</p>
-    <form id="CheckForm" method="post" action="/">     
-        <ul id = "CheckForm">
-            <div class="form">
-            {% for i in output %}
-            <li>
-                <input class="outputList" type="checkbox" id="{{i}}" name="output" value="{{i}}">
-                <label class="outputList" for="{{i}}">{{i}}</label>
-            </li>
-            {% endfor %}
+        <div class="Dialogue">
+            <div class="Input">
+                <p>Enter Your Statement</p>
+                <form id="ValueForm" method="post" action="/">
+                    <input type="text" id="statement" name="statement" />
+                    <br>
+                    <button type="submit" onclick="loadingAnim()">Press</button>
+                </form>
             </div>
-            <br>
-            <button type="submit" onclick="loadingAnim()">Check Box</button>    
-        </ul>
-    </form>
+            <div class="Output">
+                <p>Result: {{label}}</p>
+                {% if output %}
+                <p>Please select all responses that are examples of harmful speech.</p>
+                <form id="CheckForm" method="post" action="/">     
+                    <ul id = "CheckForm">
+                        <div class="form">
+                            {% for i in output %}
+                            <li>
+                                <input class="outputList" type="checkbox" id="{{i}}" name="output" value="{{i}}">
+                                <label class="outputList" for="{{i}}">{{i}}</label>
+                            </li>
+                            {% endfor %}
+                        </div>
+                        <br>
+                        <button type="submit" onclick="loadingAnim()">Check Box</button>    
+                    </ul>
+                </form>
 
-    {% endif %}
+                {% endif %}
+            </div>
+
+
+
+        </div>
+
+        <div id="loading_animation" style="display:none;">
+            <div class="lds-spinner">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </div>
 
-    
 
-    </div>
+        <script>
+            var x = document.getElementById("CheckBoxConfirmation");
+            if (x !== null){
 
-    <div id="loading_animation" style="display:none;"><div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div><div>
-
-    </div>
-    
-    <script>
-        var x = document.getElementById("CheckBoxConfirmation");
-        if (x !== null){
-            
-            setTimeout(function(){
-                x.classList.remove("fade_in");
-                x['style']['animation-duration'] = '.5s';
-                x.classList.add("fade_out");
-            }, 3000);
+                setTimeout(function(){
+                    x.classList.remove("fade_in");
+                    x['style']['animation-duration'] = '.5s';
+                    x.classList.add("fade_out");
+                }, 3000);
 
 
-        }
-    </script>
-    
+            }
+        </script>
 
-</main>
+
+    </main>
 
     
 
-{% endblock content %}
+    {% endblock content %}
