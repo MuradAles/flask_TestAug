@@ -10,54 +10,61 @@
     <div id="CheckBoxConfirmation">Responses submitted!</div>
     {% endif %}
     <script>
-
-        
-
-        function loadingAnim(){
-            var x=document.getElementById("loading_animation");
-            if (x.style.display == 'none'){
+        function loadingAnim() {
+            var x = document.getElementById("loading_animation");
+            if (x.style.display == 'none') {
                 x.style.display = 'block';
                 x.classList.remove("fade_out")
                 x.classList.add("fade_in")
             }
         }
-        function checkboxClick(element){
+        function checkboxClick(element) {
             element.checked = !element.checked;
         }
     </script>
-
-
     <!--    <button onclick="loadingAnim()">DEBUG-SHOW ANIM</button> -->
     <div class="Main">
         <div class="Dialogue">
             <div class="Input">
                 <h2>Input:</h2>
-                <br>
-                <label>Enter Your Statement:</label>
+                <label>To use TestAug, please provide negative sentences or provide your own sentences.</label>
                 <form id="ValueForm" method="post" action="/">
-                    <textarea type="text" id="statement" name="statement" placeholder="Give an example of hate speech towards...">{{label}}</textarea>
-                    <br>
-                    <button type="submit" onclick="loadingAnim()">Submit Request</button>
+                    <textarea type="text" id="statement" name="statement" placeholder="Give an example of hate speech towards...&#10;ex:
+                        &#10;1. A negative sentiment sentence with negative sentiment question and word yes as the answer.
+                        &#10;2. A positive sentiment sentence with positive sentiment question and word yes as the answer.
+                        &#10;3. My opinion is more important than others’ when expressing positive sentiment.
+                        ">{{label}}</textarea>
+                    <!-- <button type="submit" onclick="loadingAnim()">Submit Request</button> -->
+                    <!-- HTML !-->
+                    <button type="submit" onclick="loadingAnim()" class="button-54" role="button">Submit
+                        Request</button>
                 </form>
             </div>
-
             <div class="Output">
                 <h2>Output:</h2>
+                {% if error %}
+                <ul>
+                    {% for i in error %}
+                    <li>
+                        <p>{{i}}</p>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
                 {% if output %}
-                <br>
-                <label>Please select all responses that are examples of harmful speech.</label>
-                <form id="CheckForm" method="post" action="/">     
-                    <ul id = "CheckForm">
+                <label>Please select all responses that you liked.</label>
+                <form id="CheckForm" method="post" action="/">
+                    <ul id="CheckForm">
                         <div class="form">
                             {% for i in output %}
                             <li>
-                                <input class="outputList" type="checkbox" id="{{i}}" name="output" value="{{i}}">
+                                <input class="outputList" type="checkbox" id="{{i}}" name="output" value="{{i}}" hidden>
                                 <label class="outputList" for="{{i}}">{{i}}</label>
                             </li>
                             {% endfor %}
                         </div>
-                        <br>
-                        <button type="submit" onclick="loadingAnim()">Submit Reponses</button>    
+                        <button type="submit" onclick="loadingAnim()" class="button-54" role="button">Submit
+                            Reponses</button>
                     </ul>
                 </form>
 
@@ -70,27 +77,26 @@
 
         <div id="loading_animation" style="display:none;">
             <div class="lds-spinner">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
         </div>
-    </div>
-
 
         <script>
             var x = document.getElementById("CheckBoxConfirmation");
-            if (x !== null){
+            if (x !== null) {
 
-                setTimeout(function(){
+                setTimeout(function () {
                     x.classList.remove("fade_in");
                     x['style']['animation-duration'] = '.5s';
                     x.classList.add("fade_out");
@@ -101,8 +107,8 @@
         </script>
 
 
-    </main>
+</main>
 
-    
 
-    {% endblock content %}
+
+{% endblock content %}

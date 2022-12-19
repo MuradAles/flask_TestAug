@@ -1,170 +1,172 @@
-header{
-    font-family:"Segoe UI";
-    color:aquamarine;
-    text-shadow:1px 1px black,
-                1px -1px black,
-                -1px 1px black,
-                -1px -1px black;
-    letter-spacing:1px;
-    margin-bottom:5vh;
-    font-size:20px;
+header {
+  font-family: "Segoe UI";
+  color: rgb(253, 186, 157);
+  text-shadow: 1px 1px black,
+    1px -1px black,
+    -1px 1px black,
+    -1px -1px black;
+  letter-spacing: 1px;
+  margin-bottom: 5vh;
+  font-size: 20px;
 }
 
-h2{
-    color:black;
-    font-size:20px;
-    margin:0;
+h2 {
+  color: black;
+  font-size: 20px;
+  margin: 0;
 }
 
 body {
-    font-family:"Segoe UI";
-    background-image: linear-gradient(to bottom,lightsalmon,linen,floralwhite,floralwhite,floralwhite,floralwhite,floralwhite);
-    background-size:cover;
-    background-repeat:no-repeat;
+  font-family: "Segoe UI";
+  background-image: linear-gradient(to bottom, rgb(250, 199, 178), linen, floralwhite, floralwhite, floralwhite, floralwhite, floralwhite);
+  background-size: cover;
+  background-repeat: no-repeat;
 
-    animation: fade_in;
-    animation-duration: 1s;
+  animation: fade_in;
+  animation-duration: 1s;
 
-    height:100vh;
-    overflow-y:hidden;
+  height: 100vh;
+  overflow-y: hidden;
 }
 
-main{
+main {}
 
+p {
+  margin-top: 0em;
+  margin-bottom: 0em;
 }
 
-p{
-    margin-top:0em;
-    margin-bottom:0em;
+ul#CheckForm {
+  padding-left: 0;
 }
 
-ul#CheckForm{
-    padding-left:0;
+label {}
+
+li {
+  list-style-type: none;
 }
 
-label{
-
+form#CheckForm {
+  margin: 0;
 }
 
-li{
-    list-style-type:none;
+textarea#statement {
+  font-family: inherit;
+  font-size: inherit;
+  resize: none;
+  width: 100%;
+  height: 150px;
+  box-sizing: border-box;
 }
 
-form#CheckForm{
-    margin:0;
-}
-
-textarea#statement{
-    font-family:inherit;
-    font-size:inherit;
-    resize:none;
-    width:100%;
-    height:150px;
-    box-sizing:border-box;
-}
-
-div#CheckBoxConfirmation{
-    position:absolute;
-    top:4vh;
-    right:3vw;
-    background-color:lightskyblue;
-    border-style:solid;
-    border-radiux:5px;
-    padding:5px;
-    border-width:1px;
-    border-color:black;
-    animation-fill-mode:forwards;
-/*    animation:fade_out;
+div#CheckBoxConfirmation {
+  position: absolute;
+  top: 4vh;
+  right: 3vw;
+  background-color: lightskyblue;
+  border-style: solid;
+  border-radiux: 5px;
+  padding: 5px;
+  border-width: 1px;
+  border-color: black;
+  animation-fill-mode: forwards;
+  /*    animation:fade_out;
     animation-duration:0.5s;
     animation-delay: 3s;*/
 
 }
 
-div.Main{
-    margin:0 auto;
-    block-size:fit-content;
-    width:95vw;
-    height:60vh;
-    padding:5px;
-/*    background-color:floralwhite;
+div.Main {
+  margin: 0 auto;
+  block-size: fit-content;
+  width: 95vw;
+  height: 60vh;
+  padding: 5px;
+  /*    background-color:floralwhite;
     border-style:solid;
     border-radius:4px;
     border-color:darkslategrey;
     border-width:1px;*/
 }
-div.Dialogue{
-    display:flex;
-    flex-direction:row;
-    column-gap:5px;
-    max-height:100%;
-/*    border-style:solid;
+
+div.Dialogue {
+  display: flex;
+  flex-direction: row;
+  column-gap: 5px;
+  max-height: 100%;
+  /*    border-style:solid;
     border-radius:4px;
     border-color:darkslategrey;
     border-width:1px;*/
 }
-div.Input{
-    width:50%;
-    height:60%;
-    padding: 10px;
-    background-color:floralwhite;
-    border-style:solid;
-    border-radius:10px;
-    border-color:rgba(40,70,70,.3);
-    border-width:1px;
+
+div.Input {
+  width: 50%;
+  height: 60%;
+  padding: 10px;
+  background-color: floralwhite;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: rgba(40, 70, 70, .3);
+  border-width: 1px;
 }
 
-div.Output{
-    width:50%;
-    height:60%;
-    padding: 10px;
-    background-color:floralwhite;
-    border-style:solid;
-    border-radius:10px;
-    border-color:rgba(40,70,70,.3);
-    border-width:1px;
+div.Output {
+  width: 50%;
+  height: 60%;
+  padding: 10px;
+  background-color: floralwhite;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: rgba(40, 70, 70, .3);
+  border-width: 1px;
 }
 
-div.form{
-    display:flex;
-    flex-direction:column;
-    max-height:300px;
-    overflow-y:scroll;
-    background-color:white;
-    border-style:solid;
-    border-radius:4px;
-    border-color:darkslategrey;
-    border-width:1px;
-    padding:5px;
-}
-div.form > * {
-    margin:5px;
+div.form {
+  display: flex;
+  flex-direction: column;
+  max-height: 300px;
+  overflow-y: scroll;
+  background-color: white;
+  border-style: solid;
+  border-radius: 4px;
+  border-color: darkslategrey;
+  border-width: 1px;
+  padding: 5px;
 }
 
-.fade_in{
-    animation: fade_in;
-    animation-duration: 1s;
-}
-.fade_out{
-    animation: fade_out;
-    animation-duration: 1s;
+div.form>* {
+  margin: 5px;
 }
 
-@keyframes fade_in{
-    0%{
-        opacity:0;
-    }
-    100%{
-        opacity:1;
-    }
+.fade_in {
+  animation: fade_in;
+  animation-duration: 1s;
 }
 
-@keyframes fade_out{
-    0%{
-        opacity:1;
-    }
-    100%{
-        opacity:0;
-    }
+.fade_out {
+  animation: fade_out;
+  animation-duration: 1s;
+}
+
+@keyframes fade_in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade_out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 /* Imported loading animation for when GPT is processing: */
@@ -174,76 +176,162 @@ div.form > * {
   width: 80px;
   height: 80px;
 }
+
 .lds-spinner div {
   transform-origin: 40px 20px;
   animation: lds-spinner 1.2s linear infinite;
 }
+
 .lds-spinner div:after {
   content: " ";
   display: block;
   position: absolute;
   top: 3px;
-  bottom:5px;
+  bottom: 5px;
   left: 39px;
   width: 3px;
   height: 10px;
   border-radius: 20%;
   background: black;
 }
+
 .lds-spinner div:nth-child(1) {
   transform: rotate(0deg);
   animation-delay: -1.1s;
 }
+
 .lds-spinner div:nth-child(2) {
   transform: rotate(30deg);
   animation-delay: -1s;
 }
+
 .lds-spinner div:nth-child(3) {
   transform: rotate(60deg);
   animation-delay: -0.9s;
 }
+
 .lds-spinner div:nth-child(4) {
   transform: rotate(90deg);
   animation-delay: -0.8s;
 }
+
 .lds-spinner div:nth-child(5) {
   transform: rotate(120deg);
   animation-delay: -0.7s;
 }
+
 .lds-spinner div:nth-child(6) {
   transform: rotate(150deg);
   animation-delay: -0.6s;
 }
+
 .lds-spinner div:nth-child(7) {
   transform: rotate(180deg);
   animation-delay: -0.5s;
 }
+
 .lds-spinner div:nth-child(8) {
   transform: rotate(210deg);
   animation-delay: -0.4s;
 }
+
 .lds-spinner div:nth-child(9) {
   transform: rotate(240deg);
   animation-delay: -0.3s;
 }
+
 .lds-spinner div:nth-child(10) {
   transform: rotate(270deg);
   animation-delay: -0.2s;
 }
+
 .lds-spinner div:nth-child(11) {
   transform: rotate(300deg);
   animation-delay: -0.1s;
 }
+
 .lds-spinner div:nth-child(12) {
   transform: rotate(330deg);
   animation-delay: 0s;
 }
+
 @keyframes lds-spinner {
   0% {
-    opacity:1;
+    opacity: 1;
   }
+
   100% {
-    opacity:0;
+    opacity: 0;
   }
 }
 
+
+
+.button-54 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-54:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  left: 5px;
+}
+
+
+@media (min-width: 768px) {
+  .button-54 {
+    padding: 0.25em 0.75em;
+  }
+}
+
+input[type="checkbox"]:checked+label {
+  background: rgb(37, 157, 37);
+  padding: 5%;
+  width: 90%;
+  color: rgb(255, 255, 255)
+}
+
+label {
+  border-radius: 5%/100%;
+  padding: 5%;
+  width: 90%;
+  display: inline-block;
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;
+  /* Footer height */
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+  /* Footer height */
+}
+
+p {
+  padding-right: 10%;
+  padding-left: 10%;
+  font-size: 16px;
+  color: #ae3a00;
+}
