@@ -6,6 +6,8 @@ main = Blueprint('main', __name__)
 
 # we collect gpt-3 responses here
 arr = []
+all_arr = []
+user_arr = []
 
 # A negative sentiment sentence with negative sentiment question and word yes as the answer.
 # A positive sentiment sentence with positive sentiment question and word yes as the answer.
@@ -16,13 +18,12 @@ arr = []
 def index():
     request_method = request.method
     error = []
-
     if request.method == 'POST':
         if "statement" in request.form:
             temp = []
             value = request.form['statement']
             value = value.split('\n')
-            print(value)
+            user_arr.append(value)
             temp.append(value)
             # if len(value) < 10:
             #     error.append("The sentence must be at least 10 characters")
@@ -30,6 +31,7 @@ def index():
             out = "hell"
             while len(out) != 5:
                 out = test.generate_gpt3_test_suite(temp)
+                all_arr.append(out)
 
             for i in range(0, 5):
                 out[i] = out[i].replace('["', ' ').replace(
@@ -39,14 +41,13 @@ def index():
                     "', '", ' ').replace(",", ' ').replace(
                     ", ", ' ').replace('" "', ' ').replace(
                     "' '", ' ').replace('"', '').replace("'", '')
-            print(out)
             value = ''.join(value)
-
         else:
             value = 0
         if "output" in request.form:
             user_like = request.form.getlist('output')
             arr.append(user_like)
+            print(arr)
         else:
             user_like = 0
         if value == 0:

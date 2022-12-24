@@ -16,10 +16,7 @@ def generate_gpt3_test_suite(
             texts.append(text.replace("}", "").replace("{", ""))
         return [text for text in texts if text]
 
-    # openai.api_key = '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'
-    # openai.api_key = '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'
-    # openai.api_key = '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'
-    openai.api_key = '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'
+    openai.api_key ='API-KEY'
     prompt = "\n".join(["- {{{}}}\n".format(text) for text in texts])
     prompt += "\n- {"
 
